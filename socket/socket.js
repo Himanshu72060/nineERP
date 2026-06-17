@@ -4,14 +4,14 @@ const Message =
 const Conversation =
     require("../models/Conversation");
 
-const onlineUsers = {};
+const users = {};
 
 module.exports = (io) => {
 
     io.on("connection", (socket) => {
 
         console.log(
-            "User Connected:",
+            "Connected:",
             socket.id
         );
 
@@ -20,11 +20,11 @@ module.exports = (io) => {
             "join",
             (userId) => {
 
-                onlineUsers[userId] =
+                users[userId] =
                     socket.id;
 
                 console.log(
-                    "User Joined:",
+                    "Joined:",
                     userId
                 );
 
@@ -74,7 +74,7 @@ module.exports = (io) => {
                     );
 
                     const receiverSocket =
-                        onlineUsers[
+                        users[
                         data.receiverId
                         ];
 
@@ -112,7 +112,9 @@ module.exports = (io) => {
                     messageId,
 
                     {
+
                         isRead: true
+
                     }
 
                 );
@@ -125,7 +127,7 @@ module.exports = (io) => {
             () => {
 
                 console.log(
-                    "User Disconnected"
+                    "Disconnected"
                 );
 
             }
