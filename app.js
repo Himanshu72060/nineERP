@@ -125,5 +125,69 @@ app.use(
     messageRoutes
 );
 
+const busRoutes =
+    require("./routes/busRoutes");
+
+
+app.use(
+    "/api/bus",
+    busRoutes
+);
+
+const routeRoutes =
+    require("./routes/routeRoutes");
+
+
+app.use(
+    "/api/routes",
+    routeRoutes
+);
+
+const driverRoutes =
+    require("./routes/driverRoutes");
+
+
+app.use(
+    "/api/drivers",
+    driverRoutes
+);
+
+const studentBusRoutes =
+    require("./routes/studentBusRoutes");
+
+
+app.use(
+    "/api/student-bus",
+    studentBusRoutes
+);
+
+const busAttendanceRoutes =
+    require("./routes/busAttendanceRoutes");
+
+
+app.use(
+    "/api/bus-attendance",
+    busAttendanceRoutes
+);
+
+const busLocationRoutes =
+    require("./routes/busLocationRoutes");
+
+
+app.use(
+    "/api/bus-location",
+    busLocationRoutes
+);
+
+const busFeeRoutes =
+    require("./routes/busFeeRoutes");
+
+
+app.use(
+    "/api/bus-fee",
+    busFeeRoutes
+);
+
+
 
 module.exports = app;
