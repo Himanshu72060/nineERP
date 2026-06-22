@@ -106,7 +106,7 @@ router.get(
 // DELETE ATTENDANCE
 
 router.delete(
-    "//:id",
+    "/:id",
     deleteAttendance
 );
 
